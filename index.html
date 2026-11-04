@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Site</title>
+  <meta name="description" content="A one-file website you can publish with GitHub Pages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --ink: #1c1915;
+      --muted: #5f584f;
+      --line: #e0d5c6;
+      --card: #fffdf9;
+      --accent: #b8431f;
+      --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+      --body: "Outfit", "Avenir Next", system-ui, sans-serif;
+      --space: 8px;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      letter-spacing: -0.011em;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 28px 0 8px;
+    }
+
+    .mark {
+      font-family: var(--display);
+      font-weight: 640;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+    }
+
+    .file {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 12ch;
+      font-family: var(--display);
+      font-weight: 560;
+      font-size: clamp(3rem, 8vw, 5.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+    }
+
+    .lead {
+      max-width: 38rem;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    section { padding: 48px 0; }
+
+    h2 {
+      margin: 0 0 22px;
+      font-family: var(--display);
+      font-weight: 560;
+      font-size: 1.85rem;
+      letter-spacing: -0.03em;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 22px 20px;
+    }
+
+    .num {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-family: var(--display);
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .steps h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .steps p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .about {
+      display: grid;
+      gap: 18px;
+    }
+
+    .about p { margin: 0; max-width: 40rem; }
+
+    .about p.note { color: var(--muted); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (min-width: 760px) {
+      .wrap { width: min(var(--max), calc(100% - 80px)); }
+      header { padding-top: 36px; }
+      .hero { padding: 88px 0 48px; }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">My Site</div>
+      <div class="file">index.html</div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <p class="kicker">GitHub Pages starter</p>
+        <h1>Hello. This is your website.</h1>
+        <p class="lead">
+          Everything here is one file. Change the words, put it on GitHub,
+          and turn on Pages. No install and no build step.
+        </p>
+      </div>
+
+      <section aria-labelledby="publish">
+        <h2 id="publish">Publish it</h2>
+        <ol class="steps">
+          <li>
+            <span class="num">01</span>
+            <h3>Create a repository</h3>
+            <p>On GitHub, make a new public repo. Name it <strong>yourusername.github.io</strong> for a personal site, or anything else for a project site.</p>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <h3>Add this file</h3>
+            <p>Upload <strong>index.html</strong> to the root of the repo, or push it with git. Keep that exact filename.</p>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <h3>Turn on Pages</h3>
+            <p>Repo → Settings → Pages. Deploy from a branch. Branch <strong>main</strong>, folder <strong>/ (root)</strong>, then save.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="about" aria-labelledby="yours">
+        <h2 id="yours">Make it yours</h2>
+        <p>
+          Replace this paragraph with a sentence about who you are, what you
+          make, or what this site is for. Headlines, colors, and the steps
+          above all live in the same file.
+        </p>
+        <p class="note">
+          A user site is published at https://yourusername.github.io/.
+          A project site is published at https://yourusername.github.io/repo-name/.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Edit the text in index.html, commit, and push. GitHub Pages updates the site.
+    </footer>
+  </div>
+</body>
+</html>
